@@ -20,8 +20,7 @@ This web application enables users to:
 - Retrieve event details using the **Ticketmaster Discovery API**.
 - Display event location using **Google Maps embedding**.
 - Use a responsive UI built with **HTML, CSS, and JavaScript (Vanilla JS)**.
-- Deploy easily using **Google App Engine**
-- Backend using **Python/Flask**
+- Deploy easily using **Google App Engine** with **Python/Flask** backend. 
 
 
 ---
@@ -80,5 +79,40 @@ python main.py
 - **Backend:** Python (Flask)
 - **APIs:** Ticketmaster Discovery API, Google Maps API
 - **Deployment:** Google Cloud App Engine
+
+- ## ⚙️ How It Works (Code Flow)
+
+### **Frontend (index.html + app.js)**
+- The search form captures:
+  - Keyword, distance, category, and location.
+  - An optional checkbox for **auto-detect location** using IP.
+- On form submission:
+  - JavaScript intercepts the event and validates required fields.
+  - If auto-detect is checked, it calls the **IPInfo API** to get approximate coordinates.
+  - Otherwise, it uses the **Google Geocoding API** to convert the entered address into latitude and longitude.
+- Once coordinates are obtained:
+  - The app sends a **GET request** to the Flask backend (`/api/search`) with all parameters.
+  - The backend calls the **Ticketmaster Discovery API** and returns a list of events in JSON.
+  - The JS script dynamically builds a **results table** with date, event name, genre, and venue.
+  - Clicking an event calls another backend route (`/api/event/<id>`) to fetch event details and render a detail card.
+  - “Show Venue Details” triggers another fetch (`/api/venue-search`) to display address and Google Maps + Ticketmaster links.
+
+### **Backend (Flask)**
+- Handles all API routing:
+  - `/api/search` → Calls Ticketmaster Discovery API for nearby events.
+  - `/api/event/<id>` → Fetches specific event details.
+  - `/api/venue-search` → Retrieves venue info and related links.
+- Merges data into JSON responses consumed by `app.js`.
+- Uses environment variables (`.env`) for all API keys to keep them secure.
+
+---
+
+## 🎨 Frontend Features
+- Built entirely with **custom CSS and Vanilla JavaScript** — no Bootstrap or frameworks.
+- Responsive, centered layout with transparent panels and styled event tables.
+- Hover effects, custom buttons, and themed badges for event status (On Sale, Off Sale, etc.).
+- Scroll animations and toggle buttons for venue details.
+- Background image configured through CSS with fixed positioning.
+
 
 
