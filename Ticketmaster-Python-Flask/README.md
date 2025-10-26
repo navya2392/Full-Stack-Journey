@@ -20,7 +20,8 @@ This web application enables users to:
 - Retrieve event details using the **Ticketmaster Discovery API**.
 - Display event location using **Google Maps embedding**.
 - Use a responsive UI built with **HTML, CSS, and JavaScript (Vanilla JS)**.
-- Deploy easily using **Google App Engine (Flask backend)**.
+- Deploy easily using **Google App Engine**
+- Backend using **Python/Flask**
 
 
 ---
@@ -79,4 +80,5 @@ python main.py
 - **Backend:** Python (Flask)
 - **APIs:** Ticketmaster Discovery API, Google Maps API
 - **Deployment:** Google Cloud App Engine
+
 
