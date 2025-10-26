@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Main Container with Background -->
+    <div class="main-wrapper">
+        <!-- Search Panel -->
+        <div class="search-panel">
+            <h2>Events Search</h2>
+            <form id="search-form">
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="keyword">Keyword <span class="required">*</span></label>
+                        <input type="text" id="keyword" name="keyword" required>
+                        <div class="error-message" id="keyword-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="distance">Distance(miles)</label>
+                        <input type="number" id="distance" name="distance" value="10" min="1" placeholder="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category <span class="required">*</span></label>
+                        <select id="category" name="category">
+                            <option value="Default">Default</option>
+                            <option value="Music">Music</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Arts">Arts</option>
+                            <option value="Theatre">Theatre</option>
+                            <option value="Film">Film</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <div class="location-label-row">
+                            <label for="location">Location <span class="required" id="location-required">*</span></label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="auto-detect" name="auto-detect">
+                                <label for="auto-detect">Auto-Detect Location</label>
+                            </div>
+                        </div>
+                        <input type="text" id="location" name="location" class="location-input-group">
+                        <div class="error-message" id="location-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-search">SEARCH</button>
+                    <button type="button" class="btn btn-clear" id="clear-btn">CLEAR</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Results Container (separate from search panel) -->
+        <div class="results-container" id="results-container">
+            <!-- Results will be populated here -->
+        </div>
+
+        <!-- Details Container -->
+        <div class="details-container" id="details-container">
+            <!-- Event details will be populated here -->
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

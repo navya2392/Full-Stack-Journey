@@ -1,0 +1,670 @@
+/* Fixed desktop width container - no responsive/* Fo/* Form Styling */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 5px;
+}ling */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 12px;
+} */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Main Wrapper with Background */
+.main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 20px 40px 20px;
+}
+
+/* Search Panel */
+.search-panel {
+    background-color: rgba(70, 70, 70, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    width: 450px;
+    max-width: 85vw;
+    display: block;
+    margin: 0 auto;
+}
+
+.search-panel h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 0 8px 0;
+    font-weight: normal;
+    font-family: 'Times New Roman', serif;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: 2;
+}
+
+.form-group label {
+    color: #00bcd4;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.required {
+    color: #ff5252;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: rgba(70, 70, 70, 0.95);
+    color: white;
+}
+
+.form-group select option {
+    background-color: rgba(70, 70, 70, 0.95);
+    color: white;
+}
+
+.form-group input::placeholder {
+    color: #cccccc;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
+    background-color: rgba(70, 70, 70, 0.95);
+}
+
+
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-search {
+    background-color: #ff5722;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-search:hover {
+    background-color: #e64a19;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-clear {
+    background-color: #5c6bc0;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-clear:hover {
+    background-color: #3f51b5;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Error Messages */
+.error-message {
+    color: #ff5252;
+    font-size: 0.8rem;
+    margin-top: 2px;
+    min-height: 0px;
+}
+
+/* Results and Details Containers */
+.results-container,
+.details-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0;
+    margin: 30px auto 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    color: black;
+    width: 900px;
+    max-width: 95vw;
+}
+
+.results-container.show,
+.details-container.show {
+    display: block;
+}
+
+/* No Records Message */
+.no-records {
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 1.1rem;
+    color: #ff0000;
+    background-color: white;
+    border-radius: 8px;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Results Table */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: serif;
+    cursor: default;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid black;
+    padding: 8px 12px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: serif;
+    font-size: 0.9rem;
+}
+
+.results-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Column widths */
+.col-date {
+    width: 15%;
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+.results-table td.col-date {
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+.col-icon {
+    width: 10%;
+}
+
+.col-event {
+    width: 35%;
+    font-family: 'Times New Roman', serif;
+}
+
+.col-genre {
+    width: 15%;
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+.results-table td.col-genre {
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+.col-venue {
+    width: 25%;
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+.results-table td.col-venue {
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+/* Event thumbnail */
+.event-thumbnail {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.no-image {
+    width: 60px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #999;
+    border-radius: 4px;
+}
+
+/* Event row hover */
+.event-row {
+    cursor: default;
+}
+
+.event-row:hover {
+    background-color: #f9f9f9;
+}
+
+.event-name {
+    color: black;
+    text-decoration: none;
+    font-family: 'Times New Roman', serif;
+    cursor: default;
+}
+
+.event-name:hover {
+    color: #0066cc;
+    text-decoration: none;
+    cursor: default;
+}
+.event-name.disabled { color: black !important; pointer-events: none; }
+
+/* Location input styling */
+
+.location-input-group.hidden {
+    display: none;
+}
+
+.location-label-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+/* Event Details Card */
+.details-container {
+    background: transparent;
+    width: 650px; /* smaller than before but still larger than 450px search */
+    max-width: 95vw;
+    margin: 20px auto 40px auto;
+    display: none;
+}
+
+.event-card {
+    backdrop-filter: blur(4px);
+    background: rgba(70, 70, 70, 0.6);
+    border-radius: 10px;
+    padding: 16px 20px;
+    color: #d8fff6;
+    font-family: 'Times New Roman', serif;
+}
+
+.ec-title {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.ec-body {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.ec-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.ec-left .ec-field { 
+    margin-bottom: 25px;
+}
+
+.ec-left {
+    padding-right: 20px;
+}
+
+.ec-label { 
+    color: #a7ffe9; 
+    font-size: 1.4rem; 
+    font-weight: normal;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ec-val { 
+    color: white; 
+    font-size: 1rem;
+    display: block;
+}
+
+.ec-link { 
+    color: #57b3ff; 
+    text-decoration: none; 
+    cursor: default;
+}
+.ec-link:hover { 
+    color: #57b3ff; 
+    text-decoration: none; 
+}
+.ec-seatmap { max-width: 100%; height: auto; border-radius: 6px; background: white; }
+
+.venue-toggle-container { 
+    text-align: center; 
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.venue-toggle { 
+    background: transparent; 
+    border: none; 
+    color: white; 
+    font-size: 1.3rem;
+    cursor: pointer; 
+    font-family: 'Times New Roman', serif; 
+}
+
+.venue-toggle:hover {
+    color: #57b3ff;
+}
+
+.venue-toggle:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Ticket status badges */
+.badge { display: inline-block; padding: 4px 10px; border-radius: 4px; color: white; font-size: 0.9rem; }
+.badge-onsale { background: #2e8b57; }
+.badge-offsale { background: #c0392b; }
+.badge-canceled { background: #000; border: 1px solid #fff; }
+.badge-postponed, .badge-rescheduled { background: #f39c12; color: white; }
+
+.location-label-row .checkbox-group {
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.location-label-row .checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.location-label-row .checkbox-group label {
+    margin: 0;
+    color: white;
+    font-family: 'Times New Roman', serif;
+    font-size: 0.85rem;
+}
+
+/* Hidden state for location field */
+.form-group.hidden {
+    display: none;
+}
+
+/* Venue Details Card Styles - Two Row Layout */
+.venue-details-card {
+    width: 650px; /* same width as event details card */
+    max-width: 90vw;
+    margin: 20px auto;
+}
+
+.venue-card {
+    background-color: white;
+    border-radius: 12px;
+    color: #333;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Top Section - Venue Name + Logo (centered) */
+.venue-header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.venue-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #333;
+    text-decoration: underline;
+    font-family: 'Times New Roman', serif;
+}
+
+.venue-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.venue-logo-container {
+    background: linear-gradient(135deg, #1eb7eb, #00a0e6);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    width: 120px;
+    height: 80px;
+}
+
+.venue-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    background: white;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.venue-logo-text-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+}
+
+.logo-text-line1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1px;
+}
+
+.logo-text-line2 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Bottom Section - Address + More Events */
+.venue-bottom-layout {
+    display: flex;
+    align-items: stretch;
+    min-height: 100px;
+    position: relative;
+}
+
+/* Left Section - Address */
+.venue-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.venue-address-label {
+    font-weight: normal;
+    color: #333;
+    font-size: 0.72rem; /* Reduced by 20% from 0.9rem */
+    font-family: 'Gill Sans MT', sans-serif;
+    min-width: 48px;
+    flex-shrink: 0;
+}
+
+.venue-address-lines {
+    margin-bottom: 10px;
+    text-align: left;
+    display: inline-block;
+}
+
+.address-line {
+    color: #333;
+    font-size: 0.72rem; /* Reduced by 20% from 0.9rem */
+    line-height: 1.3;
+    margin-bottom: 2px;
+    font-family: 'Gill Sans MT', sans-serif;
+    font-weight: normal;
+    display: flex;
+    gap: 4px;
+}
+
+.address-line-indent {
+    margin-left: 52px; /* Align with the address text after "Address:" label */
+    display: block; /* Override flex layout for indented lines */
+}
+
+.venue-link {
+    color: #1eb7eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: auto;
+}
+
+.venue-link:hover {
+    color: #800080; /* Purple color */
+    text-decoration: none;
+}
+
+/* Vertical Divider */
+.venue-vertical-divider {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    bottom: 10px;
+    width: 1px;
+    background: #888888;
+    transform: translateX(-50%);
+}
+
+/* Right Section - More Events Link */
+.venue-right {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.venue-link-right {
+    color: #1eb7eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.venue-link-right:hover {
+    color: #800080; /* Purple color */
+    text-decoration: none;
+}
+
+.venue-error {
+    text-align: center;
+    color: #ff6b6b;
+    font-size: 1.1rem;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 12px;
+}
+
+/* Update venue toggle button styles */
+.venue-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.venue-toggle:hover {
+    color: #57b3ff;
+}
+
+.venue-arrow {
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin: 8px auto 0;
+    display: block;
+}

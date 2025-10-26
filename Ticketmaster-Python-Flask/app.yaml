@@ -1,0 +1,10 @@
+runtime: python312
+entrypoint: gunicorn -b :$PORT main:app
+
+automatic_scaling:
+  max_instances: 10
+
+env_variables:
+  TICKETMASTER_KEY: "4ByKviobrDGcotw3h4NUXtgN2CYfcTII"
+  GOOGLE_KEY: "AIzaSyBwpB2e3eNjXDLiw1YZYCHZf0mP9bjLJmk"
+  IPINFO_TOKEN: "de5d09082712ed"
