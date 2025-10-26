@@ -80,7 +80,7 @@ python main.py
 - **APIs:** Ticketmaster Discovery API, Google Maps API
 - **Deployment:** Google Cloud App Engine
 
-- ## ⚙️ How It Works (Code Flow)
+## ⚙️ How It Works (Code Flow)
 
 ### **Frontend (index.html + app.js)**
 - The search form captures:
@@ -113,6 +113,7 @@ python main.py
 - Hover effects, custom buttons, and themed badges for event status (On Sale, Off Sale, etc.).
 - Scroll animations and toggle buttons for venue details.
 - Background image configured through CSS with fixed positioning.
+
 
 
 
