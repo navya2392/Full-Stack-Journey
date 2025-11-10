@@ -1,7 +1,7 @@
 # Ticketmaster Event Discovery App (Python + Flask)
 
 
-A full-stack web application that allows users to search for live events using the Ticketmaster API. The app integrates Google Maps for event location visualization and dynamically updates search results with responsive front-end design.
+A full-stack web application that allows users to search for live events using the Ticketmaster API. The app integrates Google Maps for event location visualization and dynamically updates search results. 
 
 
 ---
@@ -113,6 +113,7 @@ python main.py
 - Hover effects, custom buttons, and themed badges for event status (On Sale, Off Sale, etc.).
 - Scroll animations and toggle buttons for venue details.
 - Background image configured through CSS with fixed positioning.
+
 
 
 
