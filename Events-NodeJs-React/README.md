@@ -98,12 +98,12 @@ hw3/
 - **Node.js** (v18 or higher)
 - **npm** or **yarn**
 - **MongoDB Atlas account** (for database)
-- **Google Cloud account** (for deployment)
-1. Clone the repository
+**- **Google Cloud account** (for deployment)
+1. Clone the repository**
 git clone https://github.com/navya2392/Full-Stack-Journey.git
 cd Full-Stack-Journey/Events-NodeJs-React
 
-▶️ Frontend Setup (React + Vite)
+**▶️ Frontend Setup (React + Vite)**
 cd client
 npm install
 npm run dev
@@ -112,7 +112,7 @@ npm run dev
 Runs at:
 http://localhost:5173
 
-🖥 Backend Setup (Node.js + Express)
+**🖥 Backend Setup (Node.js + Express)**
 cd server
 npm install
 npm run dev
@@ -121,7 +121,7 @@ npm run dev
 Runs at:
 http://localhost:8080
 
-🔑 Environment Variables
+**🔑 Environment Variables**
 
 Create a .env file under server/:
 
@@ -131,7 +131,7 @@ SPOTIFY_CLIENT_ID=your_id
 SPOTIFY_CLIENT_SECRET=your_secret
 MONGODB_URI=your_atlas_connection_string
 
-🔗 API Endpoints
+**🔗 API Endpoints**
 
 Autosuggest: /api/suggest
 
@@ -151,88 +151,33 @@ POST /api/favorites
 
 DELETE /api/favorites/:id
 
-🎨 Main Features
-🔍 Search Page
+**🎨 Main Features**
+Event Search
+Search events by keyword, category, distance, and location (manual or auto-detect).
 
-Keyword autosuggest (Ticketmaster)
+Autocomplete Suggestions
+Real-time Ticketmaster keyword suggestions with debounced API calls.
 
-Category dropdown
+Responsive Event Cards
+Display up to 20 events with category, date/time, venue, image, and favorite toggle.
 
-Distance input
+Event Details Page
+Includes ticket info, genres, seat map, ticket status, social sharing, and Ticketmaster link.
 
-Location field or auto-detect toggle
+Artist/Team Info (Spotify)
+Shows popularity, follower count, albums, and Spotify links for music events.
 
-Responsive cards with:
+Venue Details
+Displays address, Google Maps link, parking info, general/child rules, and “See Events.”
 
-Category
+Favorites System
+Add/remove favorites with MongoDB persistence and Sonner notifications (add/remove/undo).
 
-Date/time
+Fully Responsive UI
+Built with React, Vite, Tailwind, and shadcn components for desktop & mobile.
 
-Cover image
-
-Event name
-
-Venue
-
-Favorite icon
-
-📄 Event Details Page
-
-Tabs built with shadcn:
-
-Info
-
-Date/time
-
-Artists
-
-Venue
-
-Genres
-
-Price range
-
-Ticket status (color-coded)
-
-Seat map
-
-Ticketmaster link
-
-Facebook & Twitter share
-
-Artists/Teams
-
-Followers
-
-Popularity (%)
-
-Spotify link
-
-Albums
-
-Venue
-
-Name
-
-Address
-
-See Events button
-
-Parking details
-
-General/child rules
-
-Google Maps link
-
-❤️ Favorites Page
-
-Stored in MongoDB Atlas
-
-Sorted by time added
-
-Remove + Undo (Sonner)
-
-Persistent across page reloads
+Secure Backend Proxy
+All Ticketmaster calls routed through Node.js/Express to protect API keys.
 
 **##☁️ Deployment**
 
