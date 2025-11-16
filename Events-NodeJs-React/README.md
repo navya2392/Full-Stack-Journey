@@ -152,32 +152,24 @@ POST /api/favorites
 DELETE /api/favorites/:id
 
 **🎨 Main Features**
-Event Search
-Search events by keyword, category, distance, and location (manual or auto-detect).
 
-Autocomplete Suggestions
-Real-time Ticketmaster keyword suggestions with debounced API calls.
+- Event Search: Search events by keyword, category, distance, and location (manual or auto-detect).
 
-Responsive Event Cards
-Display up to 20 events with category, date/time, venue, image, and favorite toggle.
+- Autocomplete Suggestions: Real-time Ticketmaster keyword suggestions with debounced API calls.
 
-Event Details Page
-Includes ticket info, genres, seat map, ticket status, social sharing, and Ticketmaster link.
+- Responsive Event Cards: Display up to 20 events with category, date/time, venue, image, and favorite toggle.
 
-Artist/Team Info (Spotify)
-Shows popularity, follower count, albums, and Spotify links for music events.
+- Event Details Page: Includes ticket info, genres, seat map, ticket status, social sharing, and Ticketmaster link.
 
-Venue Details
-Displays address, Google Maps link, parking info, general/child rules, and “See Events.”
+- Artist/Team Info (Spotify): Shows popularity, follower count, albums, and Spotify links for music events.
 
-Favorites System
-Add/remove favorites with MongoDB persistence and Sonner notifications (add/remove/undo).
+- Venue Details: Displays address, Google Maps link, parking info, general/child rules, and “See Events.”
 
-Fully Responsive UI
-Built with React, Vite, Tailwind, and shadcn components for desktop & mobile.
+- Favorites System: Add/remove favorites with MongoDB persistence and Sonner notifications (add/remove/undo).
 
-Secure Backend Proxy
-All Ticketmaster calls routed through Node.js/Express to protect API keys.
+- Fully Responsive UI: Built with React, Vite, Tailwind, and shadcn components for desktop & mobile.
+
+- Secure Backend Proxy: All Ticketmaster calls routed through Node.js/Express to protect API keys.
 
 **##☁️ Deployment**
 
