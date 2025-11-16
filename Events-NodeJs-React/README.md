@@ -131,7 +131,7 @@ SPOTIFY_CLIENT_ID=your_id
 SPOTIFY_CLIENT_SECRET=your_secret
 MONGODB_URI=your_atlas_connection_string
 
-**🔗 API Endpoints**
+## 🔗 API Endpoints
 
 - Autosuggest: /api/suggest
 
@@ -151,7 +151,7 @@ Favorites:
 
 - DELETE /api/favorites/:id
 
-**🎨 Main Features**
+## 🎨 Main Features
 
 - Event Search: Search events by keyword, category, distance, and location (manual or auto-detect).
 
