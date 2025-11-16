@@ -171,7 +171,7 @@ Favorites:
 
 - Secure Backend Proxy: All Ticketmaster calls routed through Node.js/Express to protect API keys.
 
-**##☁️ Deployment**
+ ## ☁️ Deployment
 
 Backend can be deployed on:
 
