@@ -1,0 +1,19 @@
+# Node / JS
+node_modules/
+.pnpm-store/
+.yarn/
+.npm/
+.cache/
+# Builds
+dist/
+build/
+.next/
+.vite/
+# Env & OS
+.env
+.env.*
+.DS_Store
+Thumbs.db
+# Coverage / logs
+coverage/
+*.log

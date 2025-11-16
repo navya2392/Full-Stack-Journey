@@ -1,0 +1,19 @@
+runtime: nodejs22
+
+# (Optional) small instance to save credits; can change later (F2, F4, etc.)
+instance_class: F1
+
+# Environment variables injected in production
+env_variables:
+  SPOTIFY_CLIENT_ID: aa683f646b5b4c138b7122f64bc79205
+  SPOTIFY_CLIENT_SECRET: c5860b2f8db542dba72856bb7f7d1168
+  TICKETMASTER_KEY: 4ByKviobrDGcotw3h4NUXtgN2CYfcTII
+  GOOGLE_KEY: AIzaSyBwpB2e3eNjXDLiw1YZYCHZf0mP9bjLJmk
+  IPINFO_TOKEN: de5d09082712ed
+  MONGODB_URI: "mongodb+srv://hw3_user:wrOzFlRs83AxbcAU@hw3cluster.4cjzuzp.mongodb.net/hw3db?retryWrites=true&w=majority&appName=hw3cluster&tls=true"
+  MONGODB_DB:  "hw3db"
+  MONGODB_COLLECTION: "favorites"
+
+# (Optional) automatic scaling defaults are fine for HW3
+# automatic_scaling:
+#   max_instances: 1
