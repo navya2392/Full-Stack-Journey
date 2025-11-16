@@ -99,6 +99,8 @@ hw3/
 - **npm** or **yarn**
 - **MongoDB Atlas account** (for database)
 **- **Google Cloud account** (for deployment)
+
+  
 **1. Clone the repository**
 git clone https://github.com/navya2392/Full-Stack-Journey.git
 cd Full-Stack-Journey/Events-NodeJs-React
