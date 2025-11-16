@@ -103,11 +103,15 @@ hw3/
   
 **1. Clone the repository**
 git clone https://github.com/navya2392/Full-Stack-Journey.git
+
 cd Full-Stack-Journey/Events-NodeJs-React
 
 **2. ▶️ Frontend Setup (React + Vite)**
+
 cd client
+
 npm install
+
 npm run dev
 
 
@@ -115,8 +119,11 @@ Runs at:
 http://localhost:5173
 
 **3.🖥 Backend Setup (Node.js + Express)**
+
 cd server
+
 npm install
+
 npm run dev
 
 
