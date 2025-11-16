@@ -99,11 +99,11 @@ hw3/
 - **npm** or **yarn**
 - **MongoDB Atlas account** (for database)
 **- **Google Cloud account** (for deployment)
-1. Clone the repository**
+**1. Clone the repository**
 git clone https://github.com/navya2392/Full-Stack-Journey.git
 cd Full-Stack-Journey/Events-NodeJs-React
 
-**▶️ Frontend Setup (React + Vite)**
+**2. ▶️ Frontend Setup (React + Vite)**
 cd client
 npm install
 npm run dev
@@ -112,7 +112,7 @@ npm run dev
 Runs at:
 http://localhost:5173
 
-**🖥 Backend Setup (Node.js + Express)**
+**3.🖥 Backend Setup (Node.js + Express)**
 cd server
 npm install
 npm run dev
@@ -121,7 +121,7 @@ npm run dev
 Runs at:
 http://localhost:8080
 
-**🔑 Environment Variables**
+**4.🔑 Environment Variables**
 
 Create a .env file under server/:
 
@@ -133,23 +133,23 @@ MONGODB_URI=your_atlas_connection_string
 
 **🔗 API Endpoints**
 
-Autosuggest: /api/suggest
+- Autosuggest: /api/suggest
 
-Event search: /api/search
+- Event search: /api/search
 
-Event details: /api/event/:id
+- Event details: /api/event/:id
 
-Venue details: /api/venue/:venueId
+- Venue details: /api/venue/:venueId
 
-Artist info (Spotify): /api/artist/:name
+- Artist info (Spotify): /api/artist/:name
 
 Favorites:
 
-GET /api/favorites
+- GET /api/favorites
 
-POST /api/favorites
+- POST /api/favorites
 
-DELETE /api/favorites/:id
+- DELETE /api/favorites/:id
 
 **🎨 Main Features**
 
