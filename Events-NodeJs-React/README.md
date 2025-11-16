@@ -99,152 +99,150 @@ hw3/
 - **npm** or **yarn**
 - **MongoDB Atlas account** (for database)
 - **Google Cloud account** (for deployment)
-
-### 1. Clone the Repository
-```bash
+1. Clone the repository
 git clone https://github.com/navya2392/Full-Stack-Journey.git
 cd Full-Stack-Journey/Events-NodeJs-React
-```
 
-### 2. Setup Backend
-
-```bash
-cd server
-npm install
-```
-
-Create a `.env` file in the `server/` directory:
-```env
-PORT=8080
-SPOTIFY_CLIENT_ID=your_spotify_client_id
-SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
-TICKETMASTER_KEY=your_ticketmaster_api_key
-GOOGLE_KEY=your_google_maps_api_key
-IPINFO_TOKEN=your_ipinfo_token
-MONGODB_URI=your_mongodb_atlas_connection_string
-MONGODB_DB=hw3db
-MONGODB_COLLECTION=favorites
-```
-
-### 3. Setup Frontend
-
-```bash
-cd ../client
-npm install
-```
-
-### 4. Run Locally
-
-**Option A: Run Both Simultaneously (Development)**
-
-Terminal 1 - Backend:
-```bash
-cd server
-node index.js
-```
-Server runs on `http://localhost:8080`
-
-Terminal 2 - Frontend:
-```bash
+▶️ Frontend Setup (React + Vite)
 cd client
+npm install
 npm run dev
-```
-Frontend runs on `http://localhost:5173` (with API proxy to port 8080)
 
-**Option B: Run Production Build Locally**
 
-1. Build the frontend:
-```bash
-cd client
-npm run build
-```
+Runs at:
+http://localhost:5173
 
-2. Copy built files to server:
-```bash
-# Windows
-xcopy /E /I /Y dist\* ..\server\public\
+🖥 Backend Setup (Node.js + Express)
+cd server
+npm install
+npm run dev
 
-# Mac/Linux
-cp -r dist/* ../server/public/
-```
 
-3. Start the server:
-```bash
-cd ../server
-node index.js
-```
+Runs at:
+http://localhost:8080
 
-Visit `http://localhost:8080`
+🔑 Environment Variables
 
-### 5. Deploy to Google App Engine
+Create a .env file under server/:
 
-1. Make sure you have Google Cloud SDK installed and authenticated:
-```bash
-gcloud auth login
-gcloud config set project your-project-id
-```
+TICKETMASTER_API_KEY=your_key
+GOOGLE_GEOCODING_API_KEY=your_key
+SPOTIFY_CLIENT_ID=your_id
+SPOTIFY_CLIENT_SECRET=your_secret
+MONGODB_URI=your_atlas_connection_string
 
-2. Build and copy frontend to server:
-```bash
-cd client
-npm run build
-xcopy /E /I /Y dist\* ..\server\public\
-```
+🔗 API Endpoints
 
-3. Deploy from server directory:
-```bash
-cd ../server
-gcloud app deploy
-```
+Autosuggest: /api/suggest
 
-4. View deployed app:
-```bash
-gcloud app browse
-```
+Event search: /api/search
 
-## 🔑 API Keys Required
+Event details: /api/event/:id
 
-You'll need to obtain API keys from:
-1. **Ticketmaster API** - https://developer.ticketmaster.com/
-2. **Spotify API** - https://developer.spotify.com/
-3. **Google Maps API** - https://console.cloud.google.com/
-4. **IPInfo** - https://ipinfo.io/
-5. **MongoDB Atlas** - https://www.mongodb.com/cloud/atlas
+Venue details: /api/venue/:venueId
 
-## 🌐 Routes
+Artist info (Spotify): /api/artist/:name
 
-- `/` or `/search` - Search for events
-- `/event/:id` - Event details page
-- `/favorites` - View favorite events
+Favorites:
 
-## 📝 Features
+GET /api/favorites
 
-- ✅ Event search with keyword, category, location, and distance filters
-- ✅ Auto-detect user location
-- ✅ Event details with tabs (Info, Artist, Venue)
-- ✅ Spotify integration for artist information and albums
-- ✅ Google Maps integration for venue location
-- ✅ Add/remove events to/from favorites
-- ✅ Persistent favorites stored in MongoDB
-- ✅ Responsive design for mobile and desktop
-- ✅ Share events on Facebook and Twitter
-- ✅ Toast notifications for user actions
-- ✅ Loading states and error handling
+POST /api/favorites
 
-## 🐛 Troubleshooting
+DELETE /api/favorites/:id
 
-### MongoDB Connection Issues
-- Ensure MongoDB Atlas allows connections from `0.0.0.0/0` (Network Access)
-- Check that environment variables are set correctly in `.env` and `app.yaml`
+🎨 Main Features
+🔍 Search Page
 
-### Build Issues
-- Clear `node_modules` and reinstall: `rm -rf node_modules && npm install`
-- Clear build cache: `rm -rf dist` (in client folder)
+Keyword autosuggest (Ticketmaster)
 
-### Deployment Issues
-- Ensure `server/public/` contains the built frontend files
-- Check Google App Engine logs: `gcloud app logs tail -s default`
+Category dropdown
 
+Distance input
+
+Location field or auto-detect toggle
+
+Responsive cards with:
+
+Category
+
+Date/time
+
+Cover image
+
+Event name
+
+Venue
+
+Favorite icon
+
+📄 Event Details Page
+
+Tabs built with shadcn:
+
+Info
+
+Date/time
+
+Artists
+
+Venue
+
+Genres
+
+Price range
+
+Ticket status (color-coded)
+
+Seat map
+
+Ticketmaster link
+
+Facebook & Twitter share
+
+Artists/Teams
+
+Followers
+
+Popularity (%)
+
+Spotify link
+
+Albums
+
+Venue
+
+Name
+
+Address
+
+See Events button
+
+Parking details
+
+General/child rules
+
+Google Maps link
+
+❤️ Favorites Page
+
+Stored in MongoDB Atlas
+
+Sorted by time added
+
+Remove + Undo (Sonner)
+
+Persistent across page reloads
+
+**##☁️ Deployment**
+
+Backend can be deployed on:
+
+Google App Engine
+
+Google Cloud Run
+
+Frontend is served from the backend (express.static), so everything runs on a single domain to avoid CORS issues.
 ## 📄 License
 
 This project is for educational purposes as part of CSCI 571 at USC.
