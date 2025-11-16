@@ -102,8 +102,8 @@ hw3/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/navya2392/hw3-navya.git
-cd hw3-navya
+git clone https://github.com/navya2392/Full-Stack-Journey.git
+cd Full-Stack-Journey/Events-NodeJs-React
 ```
 
 ### 2. Setup Backend
