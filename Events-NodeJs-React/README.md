@@ -135,9 +135,13 @@ http://localhost:8080
 Create a .env file under server/:
 
 TICKETMASTER_API_KEY=your_key
+
 GOOGLE_GEOCODING_API_KEY=your_key
+
 SPOTIFY_CLIENT_ID=your_id
+
 SPOTIFY_CLIENT_SECRET=your_secret
+
 MONGODB_URI=your_atlas_connection_string
 
 ## 🔗 API Endpoints
